@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGWMI", "TGWMI\TGWMI.csproj", "{2F6FA99A-EF77-4673-819D-687C22B63BA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGWMI.Data", "TGWMI.Data\TGWMI.Data.csproj", "{C46E985D-CF3B-48F0-BA5A-1FAEA9155935}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F6FA99A-EF77-4673-819D-687C22B63BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6FA99A-EF77-4673-819D-687C22B63BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6FA99A-EF77-4673-819D-687C22B63BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6FA99A-EF77-4673-819D-687C22B63BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46E985D-CF3B-48F0-BA5A-1FAEA9155935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46E985D-CF3B-48F0-BA5A-1FAEA9155935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46E985D-CF3B-48F0-BA5A-1FAEA9155935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46E985D-CF3B-48F0-BA5A-1FAEA9155935}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E8F15A6-C4EE-4F39-AFD0-547CDFE855A4}
+	EndGlobalSection
+EndGlobal
