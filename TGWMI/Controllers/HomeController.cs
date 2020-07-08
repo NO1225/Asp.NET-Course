@@ -20,13 +20,9 @@ namespace TGWMI.Controllers
 
         public IActionResult Index()
         {
-            ContactViewModel contact = new ContactViewModel();
-            contact.Name = "Anas";
-            contact.PhoneNumber = "000909090";
-            
-            ViewData["Number"] = 14;
+           
 
-            return View(contact);
+            return View();
         }
 
         [HttpGet]

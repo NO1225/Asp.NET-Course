@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using TGWMI.Data.DataAccess;
 using TGWMI.Data.Models;
+using TGWMI.Models;
 
 namespace TGWMI.Controllers
 {
@@ -19,11 +19,25 @@ namespace TGWMI.Controllers
             _context = context;
         }
 
+
         // GET: Contacts
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Contacts.Include(c => c.ContactType);
-            return View(await applicationDbContext.ToListAsync());
+            List<ContactViewModel> response = await _context
+                .Contacts
+                .Include(contact => contact.ContactType)
+                .Select(contact => new ContactViewModel()
+                {
+                     FullName = contact.FullName,
+                     Id = contact.Id,
+                     PhoneNumber = contact.PhoneNumber,
+                     ContactTypeName = contact.ContactType.TypeName
+                }).ToListAsync();
+
+            return View(response);
+
+            //var applicationDbContext = _context.Contacts.Include(c => c.ContactType);
+            //return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Contacts/Details/5
@@ -34,15 +48,25 @@ namespace TGWMI.Controllers
                 return NotFound();
             }
 
-            var contact = await _context.Contacts
+            var contactViewModel = await _context.Contacts
                 .Include(c => c.ContactType)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (contact == null)
+                .Where(c => c.Id == id)
+                .Select(contact => new ContactViewModel()
+                {
+                    FullName = contact.FullName,
+                    Id = contact.Id,
+                    PhoneNumber = contact.PhoneNumber,
+                    ContactTypeName = contact.ContactType.TypeName
+                })
+                .FirstOrDefaultAsync(); 
+
+
+            if (contactViewModel == null)
             {
                 return NotFound();
             }
 
-            return View(contact);
+            return View(contactViewModel);
         }
 
         // GET: Contacts/Create

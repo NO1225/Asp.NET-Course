@@ -7,7 +7,7 @@ using System.Text;
 
 namespace TGWMI.Data.Models
 {
-    public class Contact
+    public class Contact 
     {
         [Key]
         public int Id { get; set; }

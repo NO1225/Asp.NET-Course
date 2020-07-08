@@ -27,6 +27,9 @@ namespace TGWMI
         {
             services.AddDbContext<ApplicationDbContext>(option => 
                 option.UseSqlServer(Configuration.GetConnectionString("Default")));
+            
+            //services.AddDbContext<ApplicationDbContext>(option => 
+            //    option.UseSqlServer(Configuration.GetConnectionString("Identity")));
 
             services.AddControllersWithViews();
         }

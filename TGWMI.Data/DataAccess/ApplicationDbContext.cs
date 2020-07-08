@@ -13,9 +13,14 @@ namespace TGWMI.Data.DataAccess
 
         }
 
-
         public DbSet<Contact> Contacts { get; set; }
 
         public DbSet<ContactType> ContactTypes { get; set; }
+
+        public DbSet<Subject> Subjects { get; set; }
+
+        public DbSet<Student> Students { get; set; }
+
+        public DbSet<StudentSubject> StudentSubjects { get; set; }
     }
 }
